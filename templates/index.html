@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram2rss generator</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+</head>
+
+<body>
+    <main>
+    <h1>Создайте RSS поток из любого Telegram-канала</h2>
+    <p>
+        Существует несколько сервисов по генерации rss-потока из телеграм-каналов, но каждый имеет какой-либо недостаток:
+<ul>
+    <li>не умеет читать приватные каналы
+    <li>редко обновляет кеш
+    <li>не отображает вложения (фото, видео, музыку)
+    <li>медленная или нестабильная работа
+</ul>
+</p>
+<p>
+Такое положение дел меня не устраивало, поэтому я сделал генератор rss-ленты из любого telegram-канала. 
+</p>
+<h3>Как это работает?</h3>
+</p>
+Бот подписывается на нужный канал, и при запросе rss-ленты на лету получает последние сообщения и генерирует rss-feed.
+<p>
+
+<!-- Вы даже можете превратить любой чат в rss-поток. -->
+</p>
+<script>
+function submitData() {
+    var channel = document.getElementById('channel').value
+    console.log(channel)
+    window.location.href = '/channel/' + channel
+
+}
+</script>
+<!-- <h3>Преимущества</h3>
+<ul>
+    <li><b>Закрытые каналы. </b>   Получайте сообщения даже из закрытых каналов, в которых вы не добавлены
+    <li><b>Репосты и сообщения из чата</b>. Можно превратить в rss-ленту обычный чат, и получать все сообщения в виде потока
+    <li><b>Вложения</b>. Фото, альбомы, музыка и видео также будут попадать в rss-ленту
+</ul> -->
+
+    <h2>введите название канала и получите rss-feed</h2>
+        <input type="text" name="channel" id="channel" placeholder="temablog" data-cip-id="channel">
+        <input type="submit" value="Создать RSS" onclick="submitData()">
+<div style='clear:both'></div>
+
+<h2>TODO</h2>
+<p>
+<ul>
+    <li>Не работают картинки
+    <li>Не работают группы (чаты)
+    <li>Не работают приватные каналы
+
+</ul>
+</p>
+
+<h4>Обратная связь</h4>
+<p>По всем вопросам <a href="mailto:nik.parotikov@gmail.com">пишите на почту</a></p>
+</body>
+</main>
+</html>

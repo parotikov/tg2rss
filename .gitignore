@@ -1,0 +1,9 @@
+venv
+*.log
+*.session
+*.db
+.vscode
+__pycache__
+*.session-journal
+.env
+*_venv
